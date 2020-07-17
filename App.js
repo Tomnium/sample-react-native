@@ -6,15 +6,19 @@
  * @flow strict-local
  */
 
+import 'react-native-gesture-handler';
 import React from 'react';
 import Store from './src/Store';
 import {Provider} from 'react-redux';
-import {AuthNavigator} from './src/navigation/navigation';
+import {AppNav} from './src/navigation/navigation';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App: () => React$Node = () => {
   return (
     <Provider store={Store}>
-      <AuthNavigator />
+      <NavigationContainer>
+        <AppNav />
+      </NavigationContainer>
     </Provider>
   );
 };
